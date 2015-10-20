@@ -38,7 +38,9 @@ class LineAnalyzer
          max_frequency = word_frequency[w.downcase]
       end
     end
+    max_frequency_words = word_frequency.select { |k,v| v == max_frequency }
     @highest_wf_count = max_frequency
+    @highest_wf_words = max_frequency_words.keys
   end
 end
 
