@@ -89,6 +89,7 @@ class Solution
     max = 0
     @analyzers.each { |analyzer| max = analyzer.highest_wf_count if max < analyzer.highest_wf_count }
     @highest_count_across_lines = max
+    @highest_count_words_across_lines = @analyzers.select { |analyzer| analyzer.highest_wf_count == max }
   end
 
 end
