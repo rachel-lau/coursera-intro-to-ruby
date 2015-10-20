@@ -85,4 +85,10 @@ class Solution
 
   #Implement the print_highest_word_frequency_across_lines() method to
   #* print the values of objects in highest_count_words_across_lines in the specified format
+  def calculate_line_with_highest_frequency
+    max = 0
+    @analyzers.each { |analyzer| max = analyzer.highest_wf_count if max < analyzer.highest_wf_count }
+    @highest_count_across_lines = max
+  end
+
 end
