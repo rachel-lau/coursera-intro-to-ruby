@@ -42,10 +42,6 @@ class LineAnalyzer
     @highest_wf_count = max_frequency
     @highest_wf_words = max_frequency_words.keys
   end
-
-  def to_s
-    "[#{highest_wf_words}] (appears in line #{line_number})"
-  end
 end
 
 #  Implement a class called Solution. 
@@ -97,7 +93,8 @@ class Solution
   end
 
   def print_highest_word_frequency_across_lines
-    @highest_count_words_across_lines.each { |analyzer| puts analyzer.to_s }
+    puts "The following words have the highest word frequency per line:"
+    @highest_count_words_across_lines.each { |analyzer| puts "#{analyzer.highest_wf_words} (appears in line #{analyzer.line_number})" }
   end
 
 end
